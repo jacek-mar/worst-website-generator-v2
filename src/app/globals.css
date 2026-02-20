@@ -1,0 +1,264 @@
+@import "tailwindcss";
+
+:root {
+  --app-bg:      #0A0A0F;
+  --app-surface: #12121A;
+  --app-border:  #2A2A3A;
+  --app-text:    #E0E0F0;
+  --app-muted:   #888899;
+  --app-accent:  #7C3AED;
+  --app-accent2: #10B981;
+  --app-danger:  #EF4444;
+}
+
+body {
+  background: var(--app-bg);
+  color: var(--app-text);
+  font-family: 'Courier New', Consolas, monospace;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.app-card {
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.app-btn {
+  background: var(--app-accent);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.4rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.9rem;
+  transition: opacity 0.15s;
+}
+
+.app-btn:hover { opacity: 0.85; }
+
+.app-btn-ghost {
+  background: transparent;
+  color: var(--app-muted);
+  border: 1px solid var(--app-border);
+  padding: 0.6rem 1.4rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.app-btn-danger {
+  background: var(--app-danger);
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.4rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.9rem;
+  transition: opacity 0.15s;
+}
+.app-btn-danger:hover { opacity: 0.85; }
+.app-btn-danger:disabled { opacity: 0.5; cursor: not-allowed; }
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+.blink-animation { animation: blink 0.8s step-end infinite; }
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.5; }
+}
+
+@keyframes fadeUpOut {
+  0%   { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-30px) scale(0.5); }
+}
+
+@keyframes progress-fill {
+  from { width: 0%; }
+  to   { width: 100%; }
+}
+
+.cursor-blink {
+  animation: blink 1s infinite;
+}
+
+/* GENERATED PAGE LAYOUTS */
+.generated-page {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Classic Vertical — standard stacked layout */
+.layout-classic-vertical section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+/* Full-Width Stacked — sections at 100vw, alternating background */
+.layout-full-width-stacked section:nth-child(even) {
+  background: var(--bg2, var(--surface)) !important;
+}
+.layout-full-width-stacked section {
+  width: 100%;
+  padding: 5rem 3rem;
+}
+
+/* Split-Screen — hero has split left/right layout */
+.layout-split-screen .section-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  text-align: left;
+  min-height: 70vh;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .layout-split-screen .section-hero { grid-template-columns: 1fr; }
+}
+
+/* Brutalist — centered, 640px max-width, huge fonts, thick colored dividers */
+.layout-brutalist .generated-page,
+.layout-brutalist section {
+  max-width: 640px;
+  margin: 0 auto;
+  border-bottom: 6px solid var(--a1) !important;
+}
+.layout-brutalist h1, .layout-brutalist h2 {
+  font-size: clamp(2.5rem, 8vw, 6rem) !important;
+  line-height: 0.9 !important;
+}
+
+/* Coming Soon — minimal: just hero + form visible */
+.layout-coming-soon section:not(.section-hero):not(.section-form):not(footer) {
+  display: none;
+}
+.layout-coming-soon .section-hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* ================================================================
+   FX:SCANLINES — CRT monitor scanline overlay on app chrome pages
+   Remove this entire block to disable. Do NOT change z-index.
+   ================================================================ */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(0, 0, 0, 0.13) 3px,
+    rgba(0, 0, 0, 0.13) 4px
+  );
+  pointer-events: none;
+  z-index: 5;
+}
+/* END FX:SCANLINES */
+
+/* ================================================================
+   FX:DOTGRID — subtle dot matrix texture on the body background
+   Remove this entire block to disable.
+   ================================================================ */
+body {
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.035) 1px,
+    transparent 1px
+  );
+  background-size: 26px 26px;
+}
+/* END FX:DOTGRID */
+
+/* ================================================================
+   FX:GLOW — phosphor monitor glow on the app chrome title
+   Remove this entire block to disable.
+   ================================================================ */
+.app-title {
+  text-shadow:
+    0 0 10px rgba(124, 58, 237, 0.55),
+    0 0 28px rgba(124, 58, 237, 0.20);
+}
+.app-badge-glow {
+  box-shadow: 0 0 12px rgba(124, 58, 237, 0.45);
+}
+/* END FX:GLOW */
+
+/* ================================================================
+   FX:SCANSWEEP — retro scanner sweep on .app-tile hover
+   Tiles need position:relative and overflow:hidden (set here).
+   Uses terminal-green (--app-accent2) for the sweep tint.
+   Remove this entire block to disable.
+   ================================================================ */
+.app-tile {
+  position: relative;
+  overflow: hidden;
+}
+.app-tile::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -65%;
+  width: 100%;
+  height: 60%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(16, 185, 129, 0.13) 50%,
+    transparent
+  );
+  pointer-events: none;
+  opacity: 0;
+}
+.app-tile:hover::after {
+  opacity: 1;
+  animation: scan-sweep 0.42s ease-out forwards;
+}
+@keyframes scan-sweep {
+  from { top: -65%; }
+  to   { top: 110%; }
+}
+/* END FX:SCANSWEEP */
+
+/* ================================================================
+   FX:TYPEWRITER — character-by-character reveal of the H1 title
+   Both title lines are exactly 17 monospace characters.
+   17ch in monospace = precise text width regardless of font size.
+   Remove this block AND revert the h1 in page.tsx to undo.
+   ================================================================ */
+.app-typewriter-wrap {
+  display: block; /* each line on its own row */
+}
+/* Both "THE FORCE AWAKENS" and "WEBSITE GENERATOR" = 17 chars */
+@keyframes type-reveal {
+  from { width: 0; }
+  to   { width: 17ch; }
+}
+.app-typewriter-line1 {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  animation: type-reveal 1.4s steps(17, end) 0.3s both;
+}
+.app-typewriter-line2 {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  animation: type-reveal 1.4s steps(17, end) 1.9s both;
+}
+/* END FX:TYPEWRITER */
