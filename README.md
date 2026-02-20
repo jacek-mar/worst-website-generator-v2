@@ -1,4 +1,4 @@
-# 🎭 THE FORCE AWAKENS — Worst Website Generator v2 🎭
+# 🎭 THE FORCE AWAKENS - Worst Website Generator v2
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Next.js](https://img.shields.io/badge/Next.js-16-black)](https://nextjs.org/)
@@ -6,6 +6,7 @@
 [![Tailwind](https://img.shields.io/badge/Tailwind-4-cyan)](https://tailwindcss.com/)
 
 > 🔥 A polished wizard that generates deliberately awful websites. The generator itself is clean. The output is chaos. That's the joke. 🔥
+<img width="1200" height="800" alt="wwgv2" src="https://github.com/user-attachments/assets/b1872cca-1c36-42b5-b0a4-789b74181f92" />
 
 **Live demo:** [https://flat-frost-8089.d.kiloapps.io/](https://flat-frost-8089.d.kiloapps.io/) 🌐
 
