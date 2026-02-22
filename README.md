@@ -12,6 +12,8 @@
 
 **GitHub:** [https://github.com/jacek-mar/worst-website-generator-v2](https://github.com/jacek-mar/worst-website-generator-v2) 🐙
 
+**Is Python more your thing?** [Check out the Flask edition](https://github.com/jacek-mar/worst-website-generator-flask) 🐍
+
 ---
 
 ## ⚠️ The Challenge ⚠️
